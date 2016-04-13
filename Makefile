@@ -9,7 +9,7 @@ F2PYFLAGS = --opt="-O3 -ffast-math -ftree-vectorize"
 
 .PHONY: all cernlib_c cernlib_f90
 
-all: cernlib_c cernlib_f90 root_improvement root_improvement_fast root_improvement_sincos
+all: cernlib_c cernlib_f90 root_extended root_improvement root_improvement_fast root_improvement_sincos
 
 cernlib_c:
 	@echo "cernlib_c";
@@ -27,7 +27,9 @@ root_improvement_fast:
 root_improvement_sincos:
 	$(CC) $(CFLAGS) $(LDFLAGS) cernlib_root_adapted/erfc.c -o cernlib_root_adapted/liberfc_sincos.so -DSINCOS
 
-
+root_extended:
+	$(CC) $(CFLAGS) $(LDFLAGS) -flto cernlib_root_extended/fadf.c -o cernlib_root_extended/fadf.so
+	#fadf_test.c
 
 
 clean:
