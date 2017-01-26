@@ -1,6 +1,9 @@
 # faddeevas
 Collection of FADDEEVA Implementations
 
+Please refer to our review published on the IPAC 2016:
+http://accelconf.web.cern.ch/AccelConf/ipac2016/papers/wepoy044.pdf
+
 Implementations
 
   + mit-scipy: scipy v >0.14
